@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://auf-zu-neuen-welten.de"><img src="assets/btn-website.svg" alt="Visit the site"/></a>
   &nbsp;
-  <a href="https://auf-zu-neuen-welten.de/#contact"><img src="assets/btn-contact.svg" alt="Get in touch"/></a>
+  <a href="https://auf-zu-neuen-welten.de/#/#contact"><img src="assets/btn-contact.svg" alt="Get in touch"/></a>
 </p>
 
 <br/>
@@ -115,7 +115,7 @@ Every idea I want to try lands in the gimmicks section of my site instead of dyi
 a scratch folder. It doubles as a testbed — if something new shows up in one of my
 client projects, chances are it was tried out here first.
 
-<a href="https://auf-zu-neuen-welten.de/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
+<a href="https://auf-zu-neuen-welten.de/#/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
 
 <br clear="all"/>
 <br/>
@@ -172,11 +172,5 @@ and roughly the budget — the more specific, the better. I usually answer withi
 <p align="center">
   <a href="mailto:benjamin.milcic@gmail.com"><b>benjamin.milcic@gmail.com</b></a><br/>
   <a href="https://auf-zu-neuen-welten.de"><b>auf-zu-neuen-welten.de</b></a><br/>
-  <a href="https://stackoverflow.com/users/20271366/benjamin"><b>stackoverflow.com/users/20271366</b></a>
 </p>
 
-<p align="center">
-  <a href="mailto:benjamin.milcic@gmail.com"><img src="assets/btn-mail.svg" alt="Write me"/></a>
-  &nbsp;
-  <a href="https://stackoverflow.com/users/20271366/benjamin"><img src="assets/btn-so.svg" alt="Stack Overflow"/></a>
-</p>

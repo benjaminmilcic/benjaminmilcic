@@ -42,23 +42,35 @@ const SERIF = "Georgia,'Fraunces','Times New Roman',serif";
 const MONO = "ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace";
 
 /* ═══════════════════════════════════════════════════════════
-   1 · HERO  —  night sky + floating orbs + enamel sign
+   1 · HERO  —  the enamel sign, free-standing, plus the numbers
    ═══════════════════════════════════════════════════════════ */
-const W = 1280;
-const H = 470;
+{
+  const W = 1000;               // same grid as every other graphic
+  const PX = 50;                // side margin
+  const PW = W - PX * 2;        // plate width
+  const PY = 18;                // plate top
+  const PH = 384;               // plate height
+  const PB = PY + PH;           // plate bottom
+  const CX = W / 2;
 
-write(
-  'header.svg',
-  `
+  const SY = PB + 26;           // stats row top
+  const SH = 98;
+  const SW = (PW - 2 * 15) / 3; // three cards, 15px gutters
+  const H = SY + SH + 12;
+
+  const stats = [
+    ['10+', 'YEARS EXPERIENCE'],
+    ['20+', 'PROJECTS'],
+    ['100%', 'PASSION'],
+  ];
+
+  write(
+    'header.svg',
+    `
 <svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"
-     role="img" aria-label="Benjamin Milčić — Freelance Full-Stack Developer, Angular · NestJS · Ionic">
-  <title>Benjamin Milčić — Freelance Full-Stack Developer</title>
+     role="img" aria-label="Benjamin Milčić — Full Stack Developer, Angular · NestJS · Ionic. Available for projects. 10+ years experience, 20+ projects.">
+  <title>Benjamin Milčić — Full Stack Developer</title>
   <defs>
-    <radialGradient id="sky" cx="50%" cy="-10%" r="115%">
-      <stop offset="0%"   stop-color="${C.sky[0]}"/>
-      <stop offset="60%"  stop-color="${C.sky[1]}"/>
-      <stop offset="100%" stop-color="${C.sky[2]}"/>
-    </radialGradient>
     <linearGradient id="enamel" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0%"   stop-color="${C.enamel[0]}"/>
       <stop offset="50%"  stop-color="${C.enamel[1]}"/>
@@ -75,118 +87,95 @@ write(
       <stop offset="55%"  stop-color="#64748b"/>
       <stop offset="100%" stop-color="#1e293b"/>
     </radialGradient>
-    <radialGradient id="vignette" cx="50%" cy="105%" r="80%">
-      <stop offset="45%"  stop-color="#000" stop-opacity="0"/>
-      <stop offset="100%" stop-color="#000" stop-opacity=".45"/>
-    </radialGradient>
-    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
-      <feGaussianBlur stdDeviation="40"/>
+    <filter id="lift" x="-15%" y="-15%" width="130%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="10" flood-color="#7c2d12" flood-opacity=".3"/>
     </filter>
-    <filter id="lift" x="-25%" y="-25%" width="150%" height="160%">
-      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".45"/>
-    </filter>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".025"/>
-    </pattern>
   </defs>
 
   <style>
-    @keyframes drift { 0%,100% { transform: translate(0,0) scale(1); }
-                        50%     { transform: translate(40px,-30px) scale(1.1); } }
-    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-    .o1 { animation: drift 14s ease-in-out infinite; }
-    .o2 { animation: drift 18s ease-in-out -3s infinite reverse; }
-    .o3 { animation: drift 12s ease-in-out -6s infinite; }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
     .live { animation: pulse 2.4s ease-in-out infinite; }
-    @media (prefers-reduced-motion: reduce) { .o1,.o2,.o3,.live { animation: none; } }
+    @media (prefers-reduced-motion: reduce) { .live { animation: none; } }
   </style>
-
-  <rect width="${W}" height="${H}" fill="url(#sky)"/>
-  <g opacity=".5">
-    <circle class="o1" cx="70"   cy="40"  r="140" fill="${C.orb[0]}" filter="url(#soft)"/>
-    <circle class="o2" cx="1210" cy="440" r="170" fill="${C.orb[1]}" filter="url(#soft)"/>
-    <circle class="o3" cx="640"  cy="250" r="100" fill="${C.orb[2]}" filter="url(#soft)"/>
-  </g>
-  <rect width="${W}" height="${H}" fill="url(#grid)"/>
-  <rect width="${W}" height="${H}" fill="url(#vignette)"/>
 
   <!-- ── enamel sign ── -->
   <g filter="url(#lift)">
-    <rect x="200" y="30" width="880" height="310" rx="26"
+    <rect x="${PX}" y="${PY}" width="${PW}" height="${PH}" rx="28"
           fill="url(#enamel)" stroke="${C.enamelEdge}" stroke-width="5"/>
-    <rect x="202.5" y="32.5" width="875" height="305" rx="24" fill="url(#gloss)"/>
+    <rect x="${PX + 2.5}" y="${PY + 2.5}" width="${PW - 5}" height="${PH - 5}" rx="26" fill="url(#gloss)"/>
   </g>
 
   <!-- corner screws -->
   ${[
-    [226, 56],
-    [1054, 56],
-    [226, 314],
-    [1054, 314],
+    [PX + 28, PY + 28],
+    [PX + PW - 28, PY + 28],
+    [PX + 28, PB - 28],
+    [PX + PW - 28, PB - 28],
   ]
     .map(
       ([x, y], i) => `<g transform="translate(${x} ${y}) rotate(${[18, -34, 62, -12][i]})">
-    <circle r="11" fill="url(#screw)"/>
-    <path d="M-5.5 0h11" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.2" stroke-linecap="round"/>
+    <circle r="12" fill="url(#screw)"/>
+    <path d="M-6 0h12" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.4" stroke-linecap="round"/>
   </g>`
     )
     .join('\n  ')}
 
-  <!-- availability pill -->
+  <!-- availability -->
   <g>
-    <rect x="512" y="56" width="256" height="28" rx="14" fill="#fff" fill-opacity=".35"
+    <rect x="${CX - 128}" y="58" width="256" height="30" rx="15" fill="#fff" fill-opacity=".38"
           stroke="${C.rust}" stroke-opacity=".2"/>
-    <circle class="live" cx="536" cy="70" r="4" fill="#16a34a"/>
-    <circle cx="536" cy="70" r="7" fill="#16a34a" fill-opacity=".3"/>
-    <text x="551" y="74.5" font-family="${MONO}" font-size="12" font-weight="600"
+    <circle cx="${CX - 104}" cy="73" r="7.5" fill="#16a34a" fill-opacity=".28"/>
+    <circle class="live" cx="${CX - 104}" cy="73" r="4" fill="#16a34a"/>
+    <text x="${CX - 89}" y="77.5" font-family="${MONO}" font-size="12" font-weight="600"
           letter-spacing="2.1" fill="${C.rust}">AVAILABLE FOR PROJECTS</text>
   </g>
 
   <!-- name -->
-  <text x="640" y="168" text-anchor="middle" font-family="${SERIF}" font-size="66"
-        font-weight="600" letter-spacing="-1.2" fill="${C.ink}">Benjamin <tspan
+  <text x="${CX}" y="176" text-anchor="middle" font-family="${SERIF}" font-size="72"
+        font-weight="600" letter-spacing="-1.4" fill="${C.ink}">Benjamin <tspan
         font-style="italic">Milčić</tspan></text>
 
   <!-- role -->
-  <text x="640" y="209" text-anchor="middle" font-family="${SERIF}" font-size="27"
+  <text x="${CX}" y="222" text-anchor="middle" font-family="${SERIF}" font-size="28"
         font-style="italic" fill="${C.rust}">Full Stack Developer</text>
 
-  <!-- stack pill -->
+  <!-- stack -->
   <g>
-    <rect x="524" y="224" width="232" height="28" rx="14" fill="#fff" fill-opacity=".42"
+    <rect x="${CX - 118}" y="242" width="236" height="30" rx="15" fill="#fff" fill-opacity=".42"
           stroke="${C.rust}" stroke-opacity=".2"/>
-    <text x="640" y="243" text-anchor="middle" font-family="${MONO}" font-size="13"
+    <text x="${CX}" y="262" text-anchor="middle" font-family="${MONO}" font-size="13"
           fill="${C.rustSoft}">Angular · NestJS · Ionic</text>
   </g>
 
   <!-- claim -->
   <g>
-    <rect x="290" y="266" width="700" height="60" rx="14" fill="#fff" fill-opacity=".3"/>
-    <text x="640" y="291" text-anchor="middle" font-family="${SERIF}" font-size="16"
+    <rect x="${CX - 360}" y="294" width="720" height="76" rx="16" fill="#fff" fill-opacity=".3"/>
+    <text x="${CX}" y="323" text-anchor="middle" font-family="${SERIF}" font-size="17"
           font-weight="600" fill="${C.ink}">Passionate developer with 10+ years of experience,</text>
-    <text x="640" y="313" text-anchor="middle" font-family="${SERIF}" font-size="16"
+    <text x="${CX}" y="348" text-anchor="middle" font-family="${SERIF}" font-size="17"
           font-weight="600" fill="${C.ink}">turning ideas into elegant, functional solutions.</text>
   </g>
 
-  <!-- stats -->
-  ${[
-    ['10+', 'YEARS EXPERIENCE', 400],
-    ['20+', 'PROJECTS', 640],
-    ['100%', 'PASSION', 880],
-  ]
-    .map(
-      ([num, label, x]) => `<g>
-    <text x="${x}" y="412" text-anchor="middle" font-family="${SERIF}" font-size="38"
+  <!-- ── the numbers ── -->
+  ${stats
+    .map(([num, label], i) => {
+      const x = PX + i * (SW + 15);
+      const cx = x + SW / 2;
+      return `<g>
+    <rect x="${x}" y="${SY}" width="${SW}" height="${SH}" rx="16" fill="${C.night}"/>
+    <rect x="${x + 0.5}" y="${SY + 0.5}" width="${SW - 1}" height="${SH - 1}" rx="15.5"
+          fill="none" stroke="${C.slate}" stroke-opacity=".18"/>
+    <text x="${cx}" y="${SY + 50}" text-anchor="middle" font-family="${SERIF}" font-size="40"
           font-weight="600" fill="${C.amber}">${num}</text>
-    <text x="${x}" y="436" text-anchor="middle" font-family="${MONO}" font-size="11"
+    <rect x="${cx - 14}" y="${SY + 62}" width="28" height="2.5" rx="1.25" fill="${C.orange}" fill-opacity=".7"/>
+    <text x="${cx}" y="${SY + 86}" text-anchor="middle" font-family="${MONO}" font-size="11"
           letter-spacing="2" fill="${C.slate}">${label}</text>
-  </g>`
-    )
+  </g>`;
+    })
     .join('\n  ')}
-  <path d="M520 378v58M760 378v58" stroke="${C.slate}" stroke-opacity=".25"/>
 </svg>`
-);
-
+  );
+}
 /* ═══════════════════════════════════════════════════════════
    3 · SECTION HEADINGS
    ═══════════════════════════════════════════════════════════ */
