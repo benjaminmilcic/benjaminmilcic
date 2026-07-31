@@ -1,26 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="261" height="44" viewBox="0 0 261 44"
+<svg xmlns="http://www.w3.org/2000/svg" width="211" height="34" viewBox="0 0 211 34"
      role="img" aria-label="ENTER THE PLAYGROUND">
-  <defs>
-    <linearGradient id="bbtnplaygroundsvg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fde68a"/><stop offset="100%" stop-color="#fbbf24"/>
-    </linearGradient>
-    <radialGradient id="sbtnplaygroundsvg" cx="35%" cy="22%" r="62%">
-      <stop offset="0%" stop-color="#fff" stop-opacity=".5"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="fbtnplaygroundsvg" x="-25%" y="-25%" width="150%" height="170%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#b45309" flood-opacity=".45"/>
-    </filter>
-  </defs>
-  <g filter="url(#fbtnplaygroundsvg)">
-    <rect x="1.5" y="1.5" width="258" height="41" rx="20.5"
-          fill="url(#bbtnplaygroundsvg)" stroke="#a16207" stroke-width="3"/>
-    <rect x="3" y="3" width="255" height="38" rx="19" fill="url(#sbtnplaygroundsvg)"/>
-  </g>
-  <g transform="translate(27.2 15)" fill="#7c2d12"
-     stroke="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <rect x=".5" y=".5" width="210" height="33" rx="7.5" fill="#fb923c" stroke="#c2410c"/>
+  <g transform="translate(13 10)" fill="#3b1206"
+     stroke="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M7 1.2 8.5 5.3l4.3 1.7-4.3 1.7L7 12.8 5.5 8.7 1.2 7l4.3-1.7z"/>
   </g>
-  <text x="51.2" y="27.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
-        font-weight="700" letter-spacing="1.2" fill="#7c2d12">ENTER THE PLAYGROUND</text>
+  <text x="34" y="21.2" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12"
+        letter-spacing=".9" fill="#3b1206">ENTER THE PLAYGROUND</text>
 </svg>

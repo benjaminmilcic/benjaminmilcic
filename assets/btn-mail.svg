@@ -1,26 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="151" height="44" viewBox="0 0 151 44"
+<svg xmlns="http://www.w3.org/2000/svg" width="113" height="34" viewBox="0 0 113 34"
      role="img" aria-label="WRITE ME">
-  <defs>
-    <linearGradient id="bbtnmailsvg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#2a5a7e"/><stop offset="40%" stop-color="#1a4a6e"/><stop offset="100%" stop-color="#0c3a5e"/>
-    </linearGradient>
-    <radialGradient id="sbtnmailsvg" cx="35%" cy="22%" r="62%">
-      <stop offset="0%" stop-color="#fff" stop-opacity=".32"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="fbtnmailsvg" x="-25%" y="-25%" width="150%" height="170%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#1e293b" flood-opacity=".45"/>
-    </filter>
-  </defs>
-  <g filter="url(#fbtnmailsvg)">
-    <rect x="1.5" y="1.5" width="148" height="41" rx="20.5"
-          fill="url(#bbtnmailsvg)" stroke="#64748b" stroke-width="3"/>
-    <rect x="3" y="3" width="145" height="38" rx="19" fill="url(#sbtnmailsvg)"/>
-  </g>
-  <g transform="translate(27.0 15)" fill="none"
-     stroke="#e2e8f0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <rect x=".5" y=".5" width="112" height="33" rx="7.5" fill="#fb923c" stroke="#c2410c"/>
+  <g transform="translate(13 10)" fill="none"
+     stroke="#3b1206" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <rect x="1.3" y="3.2" width="11.4" height="7.6" rx="1.4"/><path d="m1.7 4 5.3 3.9L12.3 4"/>
   </g>
-  <text x="51.0" y="27.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
-        font-weight="700" letter-spacing="1.2" fill="#e2e8f0">WRITE ME</text>
+  <text x="34" y="21.2" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12"
+        letter-spacing=".9" fill="#3b1206">WRITE ME</text>
 </svg>

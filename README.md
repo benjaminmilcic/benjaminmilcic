@@ -4,8 +4,6 @@
   </a>
 </p>
 
-<img src="assets/marquee.svg" width="100%" alt="Angular · NestJS · Ionic · TypeScript · Node.js · RxJS · NgRx · Cypress · MySQL · Firebase · Tailwind · Capacitor"/>
-
 <p align="center">
   <a href="https://auf-zu-neuen-welten.de"><img src="assets/btn-website.svg" alt="Visit the site"/></a>
   &nbsp;
@@ -56,17 +54,15 @@ export class BenjaminMilcic {
 
 <img src="assets/sec-02-stack.svg" width="100%" alt="02 · Stack — Tools I use every day"/>
 
-<img src="assets/stack.svg" width="100%" alt="Angular, TypeScript, Ionic, NestJS, RxJS, NgRx, SCSS, Node.js, Express, MySQL, Firebase, Tailwind, Angular Material, Cypress, Socket.IO, Stripe, Leaflet, MapTiler, Chart.js, Cloudflare Workers, Capacitor, HTML, CSS, JavaScript, PHP"/>
+<img src="assets/stack.svg" width="100%" alt="Frontend: Angular, Ionic, TypeScript, RxJS, NgRx, Tailwind, HTML5, CSS3, JavaScript — Backend and tools: NestJS, Node.js, MySQL, Firebase, Cypress, Docker, npm"/>
 
 <br/>
 
 <img src="assets/sec-03-work.svg" width="100%" alt="03 · Work — Selected projects"/>
 
-### Auf zu neuen Welten
+<img src="https://auf-zu-neuen-welten.de/assets/homepage-image.png" align="right" width="400" alt="auf-zu-neuen-welten.de"/>
 
-<a href="https://auf-zu-neuen-welten.de">
-  <img src="https://auf-zu-neuen-welten.de/assets/homepage-image.png" width="440" align="right" alt="auf-zu-neuen-welten.de"/>
-</a>
+### Auf zu neuen Welten
 
 My homepage, portfolio and permanent construction site — and the source of the
 graphics you are looking at right now.
@@ -84,16 +80,21 @@ Public on purpose: the code is part of the portfolio.
 <br clear="all"/>
 <br/>
 
+<img src="https://auf-zu-neuen-welten.de/assets/learnCroatian.webp" align="right" width="400" alt="Vocabulary Trainer"/>
+
 ### Vocabulary Trainer
 
-Web and Android app for learning Croatian — one Angular/Ionic codebase, two
-platforms, Firebase behind it. Built because I wanted the thing to exist.
+Web and Android app for learning Croatian — one Angular/Ionic codebase, two platforms,
+Firebase behind it. Built because I wanted the thing to exist.
 
 <a href="https://learn-croatian-86b00.web.app/"><img src="assets/btn-live.svg" alt="Live"/></a>
 <a href="https://github.com/benjaminmilcic/learn-croatian"><img src="assets/btn-code.svg" alt="Source"/></a>
 <a href="https://raw.githubusercontent.com/benjaminmilcic/learn-croatian/master/apk/learn-croatian.apk"><img src="assets/btn-apk.svg" alt="Download APK"/></a>
 
+<br clear="all"/>
 <br/>
+
+<img src="https://auf-zu-neuen-welten.de/assets/game-collection-en.webp" align="right" width="400" alt="Game Collection"/>
 
 ### Game Collection
 
@@ -103,46 +104,64 @@ Play against someone sitting in another browser.
 <a href="https://whiteboard-32486.web.app/"><img src="assets/btn-live.svg" alt="Live"/></a>
 <a href="https://github.com/benjaminmilcic/whiteboard"><img src="assets/btn-code.svg" alt="Source"/></a>
 
+<br clear="all"/>
 <br/>
 
 <img src="assets/sec-04-playground.svg" width="100%" alt="04 · Playground — Where ideas get tested"/>
+
+<img src="https://auf-zu-neuen-welten.de/assets/gimmicks.webp" align="right" width="400" alt="The playground"/>
 
 Every idea I want to try lands in the gimmicks section of my site instead of dying in
 a scratch folder. It doubles as a testbed — if something new shows up in one of my
 client projects, chances are it was tried out here first.
 
-<img src="assets/playground.svg" width="100%" alt="Weather maps, interactive charts, AI image generator, realtime chat, recipe manager, movie database, country explorer, calendar, guestbook, site-wide search, Minesweeper, Connect Four, Yahtzee, jigsaw puzzle, quizzes"/>
+<a href="https://auf-zu-neuen-welten.de/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
 
-<p align="center">
-  <a href="https://auf-zu-neuen-welten.de/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
-</p>
+<br clear="all"/>
+<br/>
+
+<img src="assets/playground.svg" width="100%" alt="Weather maps, interactive charts, AI image generator, realtime chat, recipe manager, movie database, country explorer, calendar, guestbook, site-wide search, Minesweeper, Connect Four, Yahtzee, jigsaw puzzle, quizzes"/>
 
 <br/>
 
 <img src="assets/sec-05-clients.svg" width="100%" alt="05 · Clients — Shipped for other people"/>
 
-**[Solakon](https://www.solakon.de)** — iOS and Android app that integrates balcony
-power plants into the home energy network. Angular + Ionic.
+<img src="https://auf-zu-neuen-welten.de/assets/solakon.webp" align="right" width="400" alt="Solakon"/>
+
+### Solakon
+
+iOS and Android app that integrates balcony power plants into the home energy network.
+Angular + Ionic.
 
 <a href="https://www.solakon.de"><img src="assets/btn-live.svg" alt="Live"/></a>
 <a href="https://play.google.com/store/apps/details?id=de.solakon.app"><img src="assets/btn-playstore.svg" alt="Play Store"/></a>
 
-**[HippoData](https://login.hippodata.de)** — B2B platform for planning and evaluating
-show jumping and riding tournaments. Angular, a lot of domain logic, a lot of edge cases.
+<br clear="all"/>
+<br/>
 
-<a href="https://login.hippodata.de"><img src="assets/btn-live.svg" alt="Live"/></a>
+<img src="https://auf-zu-neuen-welten.de/assets/webaro.webp" align="right" width="400" alt="Webaro"/>
 
-**[Webaro](https://webaro.de)** — dashboard for Weber Agrar Robotics: planning and
-evaluation of agricultural drone data, with live data streaming in. Angular.
+### Webaro
+
+Dashboard for Weber Agrar Robotics: planning and evaluation of agricultural drone data,
+with live data streaming in. Angular.
 
 <a href="https://webaro.de"><img src="assets/btn-live.svg" alt="Live"/></a>
 
-**[CatchCups](https://catchcups.com)** — mobile app that evaluates measurement data
-from lawn irrigation systems. Angular + Ionic.
+<br clear="all"/>
+<br/>
+
+<img src="https://auf-zu-neuen-welten.de/assets/catchCups.webp" align="right" width="400" alt="CatchCups"/>
+
+### CatchCups
+
+Mobile app that evaluates measurement data from lawn irrigation systems.
+Angular + Ionic.
 
 <a href="https://catchcups.com"><img src="assets/btn-live.svg" alt="Live"/></a>
 <a href="https://play.google.com/store/apps/details?id=de.codext.catchcup"><img src="assets/btn-playstore.svg" alt="Play Store"/></a>
 
+<br clear="all"/>
 <br/>
 
 <img src="assets/sec-06-contact.svg" width="100%" alt="06 · Contact — Let's talk."/>
@@ -151,18 +170,13 @@ Working on something and wondering whether I'm a fit? Tell me the stack, the tim
 and roughly the budget — the more specific, the better. I usually answer within a day.
 
 <p align="center">
-  <a href="mailto:benjamin.milcic@gmail.com"><img src="assets/btn-mail.svg" alt="Write me"/></a>
-  &nbsp;
-  <a href="https://auf-zu-neuen-welten.de/#contact"><img src="assets/btn-website.svg" alt="Visit the site"/></a>
-  &nbsp;
-  <a href="https://stackoverflow.com/users/20271366/benjamin"><img src="assets/btn-so.svg" alt="Stack Overflow"/></a>
+  <a href="mailto:benjamin.milcic@gmail.com"><b>benjamin.milcic@gmail.com</b></a><br/>
+  <a href="https://auf-zu-neuen-welten.de"><b>auf-zu-neuen-welten.de</b></a><br/>
+  <a href="https://stackoverflow.com/users/20271366/benjamin"><b>stackoverflow.com/users/20271366</b></a>
 </p>
 
-<br/>
-
-<img src="assets/marquee.svg" width="100%" alt=""/>
-
 <p align="center">
-  <sub><i>Every graphic on this page is hand-built SVG — <code>node tools/build-assets.mjs</code>.</i></sub><br/>
-  <sub><b>~ auf zu neuen Welten</b></sub>
+  <a href="mailto:benjamin.milcic@gmail.com"><img src="assets/btn-mail.svg" alt="Write me"/></a>
+  &nbsp;
+  <a href="https://stackoverflow.com/users/20271366/benjamin"><img src="assets/btn-so.svg" alt="Stack Overflow"/></a>
 </p>

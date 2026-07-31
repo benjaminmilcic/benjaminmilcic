@@ -4,12 +4,19 @@
  *
  *   node tools/build-assets.mjs
  */
-import { mkdirSync, writeFileSync } from 'node:fs';
+import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const OUT = join(dirname(fileURLToPath(import.meta.url)), '..', 'assets');
+const HERE = dirname(fileURLToPath(import.meta.url));
+const OUT = join(HERE, '..', 'assets');
+/** Tool logos are reused from the portfolio project. */
+const ICON_SRC = join(HERE, '..', '..', 'aznw-routes', 'src', 'assets', 'svg');
 mkdirSync(OUT, { recursive: true });
+
+/** SVG is XML — anything going into a text node or attribute needs escaping. */
+const esc = (s) =>
+  String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 
 const write = (name, svg) => {
   writeFileSync(join(OUT, name), svg.trim() + '\n', 'utf8');
@@ -181,58 +188,6 @@ write(
 );
 
 /* ═══════════════════════════════════════════════════════════
-   2 · MARQUEE  —  endlessly scrolling stack strip
-   ═══════════════════════════════════════════════════════════ */
-{
-  const items = [
-    'ANGULAR', 'NESTJS', 'IONIC', 'TYPESCRIPT', 'NODE.JS', 'RXJS',
-    'NGRX', 'CYPRESS', 'MYSQL', 'FIREBASE', 'TAILWIND', 'CAPACITOR',
-  ];
-  const fs = 13, cw = fs * 0.62 + 1.3, gap = 26;
-  let x = 0;
-  const parts = [];
-  for (const it of items) {
-    parts.push(
-      `<text x="${x.toFixed(1)}" y="22" font-family="${MONO}" font-size="${fs}" letter-spacing="1.3" fill="${C.slate}">${it}</text>`
-    );
-    x += it.length * cw + gap;
-    parts.push(`<circle cx="${(x + 3).toFixed(1)}" cy="17.5" r="3" fill="${C.orange}"/>`);
-    x += 6 + gap;
-  }
-  const seq = Math.round(x);
-
-  write(
-    'marquee.svg',
-    `
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="56" viewBox="0 0 1280 56"
-     role="img" aria-label="Angular · NestJS · Ionic · TypeScript · Node.js · RxJS · NgRx · Cypress · MySQL · Firebase · Tailwind · Capacitor">
-  <defs>
-    <g id="seq">${parts.join('')}</g>
-    <linearGradient id="fade" x1="0" x2="1">
-      <stop offset="0"    stop-color="${C.night}"/>
-      <stop offset=".06"  stop-color="${C.night}" stop-opacity="0"/>
-      <stop offset=".94"  stop-color="${C.night}" stop-opacity="0"/>
-      <stop offset="1"    stop-color="${C.night}"/>
-    </linearGradient>
-  </defs>
-  <style>
-    @keyframes roll { from { transform: translateX(0); } to { transform: translateX(-${seq}px); } }
-    .track { animation: roll 26s linear infinite; }
-    @media (prefers-reduced-motion: reduce) { .track { animation: none; } }
-  </style>
-  <rect width="1280" height="56" fill="${C.night}"/>
-  <path d="M0 .5h1280M0 55.5h1280" stroke="${C.slate}" stroke-opacity=".14"/>
-  <g clip-path="inset(0)">
-    <g class="track" transform="translate(0 16)">
-      <use href="#seq" x="0"/><use href="#seq" x="${seq}"/><use href="#seq" x="${seq * 2}"/>
-    </g>
-  </g>
-  <rect width="1280" height="56" fill="url(#fade)"/>
-</svg>`
-  );
-}
-
-/* ═══════════════════════════════════════════════════════════
    3 · SECTION HEADINGS
    ═══════════════════════════════════════════════════════════ */
 const section = (num, tag, head, em) => `
@@ -264,47 +219,100 @@ write('sec-05-clients.svg', section('05', 'CLIENTS', 'Shipped for', 'other peopl
 write('sec-06-contact.svg', section('06', 'CONTACT', "Let's", 'talk.'));
 
 /* ═══════════════════════════════════════════════════════════
-   4 · STACK BOARD  —  chips grouped by how often I reach for them
+   4 · STACK BOARD  —  two groups, every tool with its own logo
    ═══════════════════════════════════════════════════════════ */
 {
-  const tiers = [
-    ['EVERY SINGLE DAY', ['Angular', 'TypeScript', 'Ionic', 'NestJS', 'RxJS', 'NgRx', 'SCSS']],
-    ['REGULARLY', ['Node.js', 'Express', 'MySQL', 'Firebase', 'Tailwind', 'Angular Material', 'Cypress']],
-    ['WHEN A PROJECT ASKS FOR IT', ['Socket.IO', 'Stripe', 'Leaflet', 'MapTiler', 'Chart.js', 'Cloudflare Workers', 'Capacitor']],
-    ['WHERE IT ALL STARTED', ['HTML', 'CSS', 'JavaScript', 'PHP']],
+  /** Reads a logo from the portfolio project and inlines it as a data URI. */
+  const logo = (file) => {
+    const raw = readFileSync(join(ICON_SRC, file), 'utf8');
+    return 'data:image/svg+xml;base64,' + Buffer.from(raw, 'utf8').toString('base64');
+  };
+  /** TypeScript has no logo in the portfolio assets, so draw one. */
+  const tsLogo =
+    'data:image/svg+xml;base64,' +
+    Buffer.from(
+      `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect width="24" height="24" rx="2.5" fill="#3178c6"/><path d="M13.1 18.9v-2.3c.4.2.8.4 1.3.5s.9.2 1.4.2c.3 0 .5 0 .8-.1.2 0 .4-.1.5-.2l.3-.3c.1-.1.1-.2.1-.4l-.2-.4-.4-.4-.7-.3-.8-.4c-.8-.3-1.3-.7-1.7-1.2s-.6-1-.6-1.7c0-.5.1-1 .3-1.4s.5-.7.9-.9.8-.4 1.3-.5 1-.2 1.5-.2 1 0 1.4.1.8.1 1.1.3v2.2c-.2-.1-.4-.2-.6-.3l-.6-.2-.6-.1h-1.2l-.5.2c-.1.1-.2.2-.3.3l-.1.4c0 .1 0 .3.1.4l.3.3.6.3.8.4.9.5.7.5c.2.2.3.4.4.7s.2.6.2.9c0 .6-.1 1.1-.3 1.5s-.5.7-.9.9-.8.4-1.3.5-1 .1-1.6.1-1.1 0-1.6-.1-.9-.3-1.3-.5zM12 9.1H8.9V19H6.1V9.1H3V6.9h9z" fill="#fff"/></svg>`,
+      'utf8'
+    ).toString('base64');
+
+  const groups = [
+    [
+      'FRONTEND',
+      [
+        ['Angular', logo('angular.svg')],
+        ['Ionic', logo('ionic.svg')],
+        ['TypeScript', tsLogo],
+        ['RxJS', logo('rxjs.svg')],
+        ['NgRx', logo('ngrx.svg')],
+        ['Tailwind', logo('tailwind.svg')],
+        ['HTML5', logo('html5.svg')],
+        ['CSS3', logo('css3.svg')],
+        ['JavaScript', logo('js.svg')],
+      ],
+    ],
+    [
+      'BACKEND & TOOLS',
+      [
+        ['NestJS', logo('nestjs.svg')],
+        ['Node.js', logo('nodejs.svg')],
+        ['MySQL', logo('mysql.svg')],
+        ['Firebase', logo('firebase.svg')],
+        ['Cypress', logo('cypress.svg')],
+        ['Docker', logo('docker.svg')],
+        ['npm', logo('npm.svg')],
+      ],
+    ],
   ];
-  const fs = 13.5, cw = fs * 0.55, padX = 15, chipH = 30, gap = 9;
-  let y = 30;
-  const rows = [];
-  for (const [label, chips] of tiers) {
-    rows.push(
-      `<text x="30" y="${y + 12}" font-family="${MONO}" font-size="11" letter-spacing="2" fill="${C.orange}">${label}</text>`
+
+  const W2 = 1000, pad = 30, usable = W2 - pad * 2;
+  const fs = 13, cw = fs * 0.61, ic = 20, iGap = 10, padX = 14, chipH = 38, gap = 10;
+  let y = 32;
+  const out = [];
+
+  for (const [label, chips] of groups) {
+    out.push(
+      `<text x="${pad}" y="${y}" font-family="${MONO}" font-size="11" letter-spacing="2" fill="${C.orange}">${esc(label)}</text>`
     );
-    let x = 30;
-    const line = y + 26;
-    for (const c of chips) {
-      const w = Math.round(c.length * cw + padX * 2);
-      rows.push(
-        `<g><rect x="${x}" y="${line}" width="${w}" height="${chipH}" rx="15" fill="${C.slate}" fill-opacity=".09" stroke="${C.slate}" stroke-opacity=".2"/>` +
-          `<text x="${x + w / 2}" y="${line + 19.5}" text-anchor="middle" font-family="${MONO}" font-size="${fs}" fill="${C.slateLight}">${c}</text></g>`
-      );
+    // Balance the wrap: 8 chips + 1 orphan on the next line looks broken,
+    // so aim for rows of roughly equal width instead of filling greedily.
+    const widths = chips.map(([n]) => Math.round(padX * 2 + ic + iGap + n.length * cw));
+    const total = widths.reduce((a, b) => a + b + gap, -gap);
+    const rowCount = Math.ceil(total / usable);
+    const target = total / rowCount;
+
+    let x = pad;
+    let line = y + 14;
+    let rowW = 0;
+    chips.forEach(([name, href], i) => {
+      const w = widths[i];
+      if (rowW && (rowW + gap + w > usable || rowW + gap + w / 2 > target)) {
+        x = pad;
+        line += chipH + gap;
+        rowW = 0;
+      }
+      rowW += (rowW ? gap : 0) + w;
+      out.push(`<g>
+    <rect x="${x}" y="${line}" width="${w}" height="${chipH}" rx="10" fill="${C.slate}" fill-opacity=".08" stroke="${C.slate}" stroke-opacity=".18"/>
+    <image href="${href}" x="${x + padX}" y="${line + (chipH - ic) / 2}" width="${ic}" height="${ic}"/>
+    <text x="${x + padX + ic + iGap}" y="${line + chipH / 2 + 4.5}" font-family="${MONO}" font-size="${fs}" fill="${C.slateLight}">${esc(name)}</text>
+  </g>`);
       x += w + gap;
-    }
-    y = line + chipH + 26;
+    });
+    y = line + chipH + 40;
   }
-  const h = y + 4;
+  const h = y - 40 + pad;
 
   write(
     'stack.svg',
     `
-<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="${h}" viewBox="0 0 1000 ${h}"
-     role="img" aria-label="Tech stack grouped by how often I use it">
+<svg xmlns="http://www.w3.org/2000/svg" width="${W2}" height="${h}" viewBox="0 0 ${W2} ${h}"
+     role="img" aria-label="Frontend: Angular, Ionic, TypeScript, RxJS, NgRx, Tailwind, HTML5, CSS3, JavaScript. Backend and tools: NestJS, Node.js, MySQL, Firebase, Cypress, Docker, npm">
   <defs><filter id="g2" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="38"/></filter></defs>
-  <rect width="1000" height="${h}" rx="18" fill="${C.night}"/>
+  <rect width="${W2}" height="${h}" rx="18" fill="${C.night}"/>
   <circle cx="60" cy="${h - 20}" r="80" fill="${C.orb[0]}" opacity=".18" filter="url(#g2)"/>
   <circle cx="960" cy="30" r="80" fill="${C.orb[1]}" opacity=".16" filter="url(#g2)"/>
-  <rect x=".5" y=".5" width="999" height="${h - 1}" rx="17.5" fill="none" stroke="${C.slate}" stroke-opacity=".16"/>
-  ${rows.join('\n  ')}
+  <rect x=".5" y=".5" width="${W2 - 1}" height="${h - 1}" rx="17.5" fill="none" stroke="${C.slate}" stroke-opacity=".16"/>
+  ${out.join('\n  ')}
 </svg>`
   );
 }
@@ -349,7 +357,7 @@ write('sec-06-contact.svg', section('06', 'CONTACT', "Let's", 'talk.'));
 }
 
 /* ═══════════════════════════════════════════════════════════
-   6 · BELL BUTTONS  —  the pill buttons from the hero
+   6 · BUTTONS  —  flat, quiet, one accent variant
    ═══════════════════════════════════════════════════════════ */
 const ICONS = {
   globe: '<circle cx="7" cy="7" r="5.6"/><path d="M1.4 7h11.2M7 1.4c1.7 1.8 2.5 3.7 2.5 5.6S8.7 10.8 7 12.6C5.3 10.8 4.5 8.9 4.5 7S5.3 3.2 7 1.4"/>',
@@ -363,60 +371,39 @@ const ICONS = {
 };
 const FILLED = new Set(['play', 'spark']);
 
-function bell(file, label, variant, icon) {
-  const fs = 13, cw = fs * 0.61 + 1.2, h = 44, b = 3, padX = 24, iconW = 14, iconGap = 10;
-  const textW = label.length * cw;
-  const w = Math.round(b * 2 + padX * 2 + iconW + iconGap + textW);
-  const startX = (w - (iconW + iconGap + textW)) / 2;
-  const primary = variant === 'primary';
-  const fg = primary ? '#e2e8f0' : C.rust;
-  const id = file.replace(/[^a-z0-9]/gi, '');
+function button(file, label, variant, icon) {
+  const fs = 12, cw = fs * 0.61 + 0.9, h = 34, padX = 13, iconW = 13, iconGap = 8;
+  const w = Math.round(padX * 2 + iconW + iconGap + label.length * cw);
+  const accent = variant === 'accent';
+  const fill = accent ? C.orange : '#1e293b';
+  const edge = accent ? '#c2410c' : '#475569';
+  const fg = accent ? '#3b1206' : '#e2e8f0';
 
   write(
     file,
     `
 <svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"
      role="img" aria-label="${label}">
-  <defs>
-    <linearGradient id="b${id}" x1="0" y1="0" x2="0" y2="1">
-      ${
-        primary
-          ? '<stop offset="0%" stop-color="#2a5a7e"/><stop offset="40%" stop-color="#1a4a6e"/><stop offset="100%" stop-color="#0c3a5e"/>'
-          : '<stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fde68a"/><stop offset="100%" stop-color="#fbbf24"/>'
-      }
-    </linearGradient>
-    <radialGradient id="s${id}" cx="35%" cy="22%" r="62%">
-      <stop offset="0%" stop-color="#fff" stop-opacity="${primary ? '.32' : '.5'}"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="f${id}" x="-25%" y="-25%" width="150%" height="170%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="${primary ? '#1e293b' : '#b45309'}" flood-opacity=".45"/>
-    </filter>
-  </defs>
-  <g filter="url(#f${id})">
-    <rect x="${b / 2}" y="${b / 2}" width="${w - b}" height="${h - b}" rx="${(h - b) / 2}"
-          fill="url(#b${id})" stroke="${primary ? '#64748b' : '#a16207'}" stroke-width="${b}"/>
-    <rect x="${b}" y="${b}" width="${w - b * 2}" height="${h - b * 2}" rx="${(h - b * 2) / 2}" fill="url(#s${id})"/>
-  </g>
-  <g transform="translate(${startX.toFixed(1)} 15)" fill="${FILLED.has(icon) ? fg : 'none'}"
-     stroke="${FILLED.has(icon) ? 'none' : fg}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <rect x=".5" y=".5" width="${w - 1}" height="${h - 1}" rx="7.5" fill="${fill}" stroke="${edge}"/>
+  <g transform="translate(${padX} ${(h - 14) / 2})" fill="${FILLED.has(icon) ? fg : 'none'}"
+     stroke="${FILLED.has(icon) ? 'none' : fg}" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     ${ICONS[icon]}
   </g>
-  <text x="${(startX + iconW + iconGap).toFixed(1)}" y="27.5" font-family="${MONO}" font-size="${fs}"
-        font-weight="700" letter-spacing="1.2" fill="${fg}">${label}</text>
+  <text x="${padX + iconW + iconGap}" y="${h / 2 + 4.2}" font-family="${MONO}" font-size="${fs}"
+        letter-spacing=".9" fill="${fg}">${label}</text>
 </svg>`
   );
 }
 
-bell('btn-website.svg', 'VISIT THE SITE', 'primary', 'globe');
-bell('btn-contact.svg', 'GET IN TOUCH', 'secondary', 'mail');
-bell('btn-live.svg', 'LIVE', 'secondary', 'arrow');
-bell('btn-code.svg', 'SOURCE', 'primary', 'code');
-bell('btn-backend.svg', 'BACKEND', 'primary', 'server');
-bell('btn-apk.svg', 'APK', 'secondary', 'down');
-bell('btn-playstore.svg', 'PLAY STORE', 'secondary', 'play');
-bell('btn-playground.svg', 'ENTER THE PLAYGROUND', 'secondary', 'spark');
-bell('btn-mail.svg', 'WRITE ME', 'primary', 'mail');
-bell('btn-so.svg', 'STACK OVERFLOW', 'primary', 'arrow');
+button('btn-website.svg', 'VISIT THE SITE', 'accent', 'globe');
+button('btn-contact.svg', 'GET IN TOUCH', 'dark', 'mail');
+button('btn-live.svg', 'LIVE', 'dark', 'arrow');
+button('btn-code.svg', 'SOURCE', 'dark', 'code');
+button('btn-backend.svg', 'BACKEND', 'dark', 'server');
+button('btn-apk.svg', 'APK', 'dark', 'down');
+button('btn-playstore.svg', 'PLAY STORE', 'dark', 'play');
+button('btn-playground.svg', 'ENTER THE PLAYGROUND', 'accent', 'spark');
+button('btn-mail.svg', 'WRITE ME', 'accent', 'mail');
+button('btn-so.svg', 'STACK OVERFLOW', 'dark', 'arrow');
 
 console.log('\nDone — assets written to /assets\n');

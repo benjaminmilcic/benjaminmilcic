@@ -1,26 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="105" height="44" viewBox="0 0 105 44"
+<svg xmlns="http://www.w3.org/2000/svg" width="72" height="34" viewBox="0 0 72 34"
      role="img" aria-label="APK">
-  <defs>
-    <linearGradient id="bbtnapksvg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fde68a"/><stop offset="100%" stop-color="#fbbf24"/>
-    </linearGradient>
-    <radialGradient id="sbtnapksvg" cx="35%" cy="22%" r="62%">
-      <stop offset="0%" stop-color="#fff" stop-opacity=".5"/>
-      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
-    </radialGradient>
-    <filter id="fbtnapksvg" x="-25%" y="-25%" width="150%" height="170%">
-      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#b45309" flood-opacity=".45"/>
-    </filter>
-  </defs>
-  <g filter="url(#fbtnapksvg)">
-    <rect x="1.5" y="1.5" width="102" height="41" rx="20.5"
-          fill="url(#bbtnapksvg)" stroke="#a16207" stroke-width="3"/>
-    <rect x="3" y="3" width="99" height="38" rx="19" fill="url(#sbtnapksvg)"/>
-  </g>
-  <g transform="translate(26.8 15)" fill="none"
-     stroke="#7c2d12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+  <rect x=".5" y=".5" width="71" height="33" rx="7.5" fill="#1e293b" stroke="#475569"/>
+  <g transform="translate(13 10)" fill="none"
+     stroke="#e2e8f0" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
     <path d="M7 1.6v6.8M4.1 5.6 7 8.5l2.9-2.9M2.2 12h9.6"/>
   </g>
-  <text x="50.8" y="27.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
-        font-weight="700" letter-spacing="1.2" fill="#7c2d12">APK</text>
+  <text x="34" y="21.2" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12"
+        letter-spacing=".9" fill="#e2e8f0">APK</text>
 </svg>
