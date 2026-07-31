@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="206" height="44" viewBox="0 0 206 44"
+     role="img" aria-label="STACK OVERFLOW">
+  <defs>
+    <linearGradient id="bbtnsosvg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2a5a7e"/><stop offset="40%" stop-color="#1a4a6e"/><stop offset="100%" stop-color="#0c3a5e"/>
+    </linearGradient>
+    <radialGradient id="sbtnsosvg" cx="35%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".32"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fbtnsosvg" x="-25%" y="-25%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#1e293b" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <g filter="url(#fbtnsosvg)">
+    <rect x="1.5" y="1.5" width="203" height="41" rx="20.5"
+          fill="url(#bbtnsosvg)" stroke="#64748b" stroke-width="3"/>
+    <rect x="3" y="3" width="200" height="38" rx="19" fill="url(#sbtnsosvg)"/>
+  </g>
+  <g transform="translate(27.1 15)" fill="none"
+     stroke="#e2e8f0" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1.6 7h9.4M7.4 3.4 11 7l-3.6 3.6"/>
+  </g>
+  <text x="51.1" y="27.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
+        font-weight="700" letter-spacing="1.2" fill="#e2e8f0">STACK OVERFLOW</text>
+</svg>

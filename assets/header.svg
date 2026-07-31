@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="470" viewBox="0 0 1280 470"
+     role="img" aria-label="Benjamin Milčić — Freelance Full-Stack Developer, Angular · NestJS · Ionic">
+  <title>Benjamin Milčić — Freelance Full-Stack Developer</title>
+  <defs>
+    <radialGradient id="sky" cx="50%" cy="-10%" r="115%">
+      <stop offset="0%"   stop-color="#1e3a8a"/>
+      <stop offset="60%"  stop-color="#000030"/>
+      <stop offset="100%" stop-color="#000018"/>
+    </radialGradient>
+    <linearGradient id="enamel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#fed7aa"/>
+      <stop offset="50%"  stop-color="#fdba74"/>
+      <stop offset="100%" stop-color="#fb923c"/>
+    </linearGradient>
+    <linearGradient id="gloss" x1="0.15" y1="0" x2="0.55" y2="1">
+      <stop offset="0%"   stop-color="#fff" stop-opacity=".45"/>
+      <stop offset="28%"  stop-color="#fff" stop-opacity=".15"/>
+      <stop offset="50%"  stop-color="#fff" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".07"/>
+    </linearGradient>
+    <radialGradient id="screw" cx="30%" cy="30%" r="78%">
+      <stop offset="0%"   stop-color="#cbd5e1"/>
+      <stop offset="55%"  stop-color="#64748b"/>
+      <stop offset="100%" stop-color="#1e293b"/>
+    </radialGradient>
+    <radialGradient id="vignette" cx="50%" cy="105%" r="80%">
+      <stop offset="45%"  stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity=".45"/>
+    </radialGradient>
+    <filter id="soft" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="40"/>
+    </filter>
+    <filter id="lift" x="-25%" y="-25%" width="150%" height="160%">
+      <feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".45"/>
+    </filter>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0v40" fill="none" stroke="#fff" stroke-opacity=".025"/>
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes drift { 0%,100% { transform: translate(0,0) scale(1); }
+                        50%     { transform: translate(40px,-30px) scale(1.1); } }
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+    .o1 { animation: drift 14s ease-in-out infinite; }
+    .o2 { animation: drift 18s ease-in-out -3s infinite reverse; }
+    .o3 { animation: drift 12s ease-in-out -6s infinite; }
+    .live { animation: pulse 2.4s ease-in-out infinite; }
+    @media (prefers-reduced-motion: reduce) { .o1,.o2,.o3,.live { animation: none; } }
+  </style>
+
+  <rect width="1280" height="470" fill="url(#sky)"/>
+  <g opacity=".5">
+    <circle class="o1" cx="70"   cy="40"  r="140" fill="#3b82f6" filter="url(#soft)"/>
+    <circle class="o2" cx="1210" cy="440" r="170" fill="#8b5cf6" filter="url(#soft)"/>
+    <circle class="o3" cx="640"  cy="250" r="100" fill="#06b6d4" filter="url(#soft)"/>
+  </g>
+  <rect width="1280" height="470" fill="url(#grid)"/>
+  <rect width="1280" height="470" fill="url(#vignette)"/>
+
+  <!-- ── enamel sign ── -->
+  <g filter="url(#lift)">
+    <rect x="200" y="30" width="880" height="310" rx="26"
+          fill="url(#enamel)" stroke="#9a3412" stroke-width="5"/>
+    <rect x="202.5" y="32.5" width="875" height="305" rx="24" fill="url(#gloss)"/>
+  </g>
+
+  <!-- corner screws -->
+  <g transform="translate(226 56) rotate(18)">
+    <circle r="11" fill="url(#screw)"/>
+    <path d="M-5.5 0h11" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1054 56) rotate(-34)">
+    <circle r="11" fill="url(#screw)"/>
+    <path d="M-5.5 0h11" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(226 314) rotate(62)">
+    <circle r="11" fill="url(#screw)"/>
+    <path d="M-5.5 0h11" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(1054 314) rotate(-12)">
+    <circle r="11" fill="url(#screw)"/>
+    <path d="M-5.5 0h11" stroke="#0f172a" stroke-opacity=".65" stroke-width="2.2" stroke-linecap="round"/>
+  </g>
+
+  <!-- availability pill -->
+  <g>
+    <rect x="512" y="56" width="256" height="28" rx="14" fill="#fff" fill-opacity=".35"
+          stroke="#7c2d12" stroke-opacity=".2"/>
+    <circle class="live" cx="536" cy="70" r="4" fill="#16a34a"/>
+    <circle cx="536" cy="70" r="7" fill="#16a34a" fill-opacity=".3"/>
+    <text x="551" y="74.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12" font-weight="600"
+          letter-spacing="2.1" fill="#7c2d12">AVAILABLE FOR PROJECTS</text>
+  </g>
+
+  <!-- name -->
+  <text x="640" y="168" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="66"
+        font-weight="600" letter-spacing="-1.2" fill="#0c4a6e">Benjamin <tspan
+        font-style="italic">Milčić</tspan></text>
+
+  <!-- role -->
+  <text x="640" y="209" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="27"
+        font-style="italic" fill="#7c2d12">Full Stack Developer</text>
+
+  <!-- stack pill -->
+  <g>
+    <rect x="524" y="224" width="232" height="28" rx="14" fill="#fff" fill-opacity=".42"
+          stroke="#7c2d12" stroke-opacity=".2"/>
+    <text x="640" y="243" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
+          fill="#9a3412">Angular · NestJS · Ionic</text>
+  </g>
+
+  <!-- claim -->
+  <g>
+    <rect x="290" y="266" width="700" height="60" rx="14" fill="#fff" fill-opacity=".3"/>
+    <text x="640" y="291" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="16"
+          font-weight="600" fill="#0c4a6e">Passionate developer with 10+ years of experience,</text>
+    <text x="640" y="313" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="16"
+          font-weight="600" fill="#0c4a6e">turning ideas into elegant, functional solutions.</text>
+  </g>
+
+  <!-- stats -->
+  <g>
+    <text x="400" y="412" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="38"
+          font-weight="600" fill="#fbbf24">10+</text>
+    <text x="400" y="436" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="11"
+          letter-spacing="2" fill="#94a3b8">YEARS EXPERIENCE</text>
+  </g>
+  <g>
+    <text x="640" y="412" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="38"
+          font-weight="600" fill="#fbbf24">20+</text>
+    <text x="640" y="436" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="11"
+          letter-spacing="2" fill="#94a3b8">PROJECTS</text>
+  </g>
+  <g>
+    <text x="880" y="412" text-anchor="middle" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="38"
+          font-weight="600" fill="#fbbf24">100%</text>
+    <text x="880" y="436" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="11"
+          letter-spacing="2" fill="#94a3b8">PASSION</text>
+  </g>
+  <path d="M520 378v58M760 378v58" stroke="#94a3b8" stroke-opacity=".25"/>
+</svg>

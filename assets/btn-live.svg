@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="115" height="44" viewBox="0 0 115 44"
+     role="img" aria-label="LIVE">
+  <defs>
+    <linearGradient id="bbtnlivesvg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fef3c7"/><stop offset="50%" stop-color="#fde68a"/><stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+    <radialGradient id="sbtnlivesvg" cx="35%" cy="22%" r="62%">
+      <stop offset="0%" stop-color="#fff" stop-opacity=".5"/>
+      <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="fbtnlivesvg" x="-25%" y="-25%" width="150%" height="170%">
+      <feDropShadow dx="0" dy="3" stdDeviation="3.5" flood-color="#b45309" flood-opacity=".45"/>
+    </filter>
+  </defs>
+  <g filter="url(#fbtnlivesvg)">
+    <rect x="1.5" y="1.5" width="112" height="41" rx="20.5"
+          fill="url(#bbtnlivesvg)" stroke="#a16207" stroke-width="3"/>
+    <rect x="3" y="3" width="109" height="38" rx="19" fill="url(#sbtnlivesvg)"/>
+  </g>
+  <g transform="translate(27.2 15)" fill="none"
+     stroke="#7c2d12" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M1.6 7h9.4M7.4 3.4 11 7l-3.6 3.6"/>
+  </g>
+  <text x="51.2" y="27.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="13"
+        font-weight="700" letter-spacing="1.2" fill="#7c2d12">LIVE</text>
+</svg>

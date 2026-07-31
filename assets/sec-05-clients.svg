@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="126" viewBox="0 0 1000 126"
+     role="img" aria-label="05 CLIENTS — Shipped for other people">
+  <defs>
+    <filter id="g" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="34"/></filter>
+  </defs>
+  <rect width="1000" height="126" rx="18" fill="#0f172a"/>
+  <circle cx="948" cy="26" r="66" fill="#fb923c" opacity=".16" filter="url(#g)"/>
+  <rect x=".5" y=".5" width="999" height="125" rx="17.5" fill="none"
+        stroke="#94a3b8" stroke-opacity=".16"/>
+  <path d="M36 41h34" stroke="#fbbf24" stroke-opacity=".85" stroke-width="1.5"/>
+  <rect x="82" y="30" width="36" height="22" rx="6" fill="#fbbf24"/>
+  <text x="100" y="45.5" text-anchor="middle" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12"
+        font-weight="700" fill="#0f172a">05</text>
+  <text x="132" y="45.5" font-family="ui-monospace,'JetBrains Mono','SF Mono',Consolas,monospace" font-size="12" letter-spacing="2.1"
+        fill="#94a3b8">CLIENTS</text>
+  <text x="36" y="96" font-family="Georgia,'Fraunces','Times New Roman',serif" font-size="36" font-weight="600"
+        letter-spacing="-.7" fill="#f1f5f9">Shipped for <tspan font-style="italic"
+        fill="#fb923c">other people</tspan></text>
+</svg>
