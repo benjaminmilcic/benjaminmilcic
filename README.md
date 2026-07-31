@@ -12,7 +12,7 @@
 
 <br/>
 
-<img src="assets/sec-01-about.svg" width="100%" alt="01 · About — Who is behind the code"/>
+<a href="https://auf-zu-neuen-welten.de/#/#about"><img src="assets/sec-01-about.svg" width="100%" alt="01 · About — Who is behind the code"/></a>
 
 I build web and mobile apps that go into production and stay there. Frontends with
 Angular and Ionic, backends with NestJS — from internal dashboards to Play Store apps
@@ -52,15 +52,15 @@ export class BenjaminMilcic {
 
 <br/>
 
-<img src="assets/sec-02-stack.svg" width="100%" alt="02 · Stack — Tools I use every day"/>
+<a href="https://auf-zu-neuen-welten.de/#/#skills"><img src="assets/sec-02-stack.svg" width="100%" alt="02 · Stack — Tools I use every day"/></a>
 
-<img src="assets/stack.svg" width="100%" alt="Frontend: Angular, Ionic, TypeScript, RxJS, NgRx, Tailwind, HTML5, CSS3, JavaScript — Backend and tools: NestJS, Node.js, MySQL, Firebase, Cypress, Docker, npm"/>
+<a href="https://auf-zu-neuen-welten.de/#/#skills"><img src="assets/stack.svg" width="100%" alt="Frontend: Angular, Ionic, TypeScript, RxJS, NgRx, Tailwind, HTML5, CSS3, JavaScript — Backend and tools: NestJS, Node.js, MySQL, Firebase, Cypress, Docker, npm"/></a>
 
 <br/>
 
-<img src="assets/sec-03-work.svg" width="100%" alt="03 · Work — Selected projects"/>
+<a href="https://auf-zu-neuen-welten.de/#/#portfolio"><img src="assets/sec-03-work.svg" width="100%" alt="03 · Work — Selected projects"/></a>
 
-<img src="https://auf-zu-neuen-welten.de/assets/homepage-image.png" align="right" width="400" alt="auf-zu-neuen-welten.de"/>
+<a href="https://auf-zu-neuen-welten.de"><img src="https://auf-zu-neuen-welten.de/assets/homepage-image.png" align="right" width="400" alt="auf-zu-neuen-welten.de"/></a>
 
 ### Auf zu neuen Welten
 
@@ -80,7 +80,7 @@ Public on purpose: the code is part of the portfolio.
 <br clear="all"/>
 <br/>
 
-<img src="https://auf-zu-neuen-welten.de/assets/learnCroatian.webp" align="right" width="400" alt="Vocabulary Trainer"/>
+<a href="https://learn-croatian-86b00.web.app/"><img src="https://auf-zu-neuen-welten.de/assets/learnCroatian.webp" align="right" width="400" alt="Vocabulary Trainer"/></a>
 
 ### Vocabulary Trainer
 
@@ -94,7 +94,7 @@ Firebase behind it. Built because I wanted the thing to exist.
 <br clear="all"/>
 <br/>
 
-<img src="https://auf-zu-neuen-welten.de/assets/game-collection-en.webp" align="right" width="400" alt="Game Collection"/>
+<a href="https://whiteboard-32486.web.app/"><img src="https://auf-zu-neuen-welten.de/assets/game-collection-en.webp" align="right" width="400" alt="Game Collection"/></a>
 
 ### Game Collection
 
@@ -107,9 +107,9 @@ Play against someone sitting in another browser.
 <br clear="all"/>
 <br/>
 
-<img src="assets/sec-04-playground.svg" width="100%" alt="04 · Playground — Where ideas get tested"/>
+<a href="https://auf-zu-neuen-welten.de/#/gimmicks"><img src="assets/sec-04-playground.svg" width="100%" alt="04 · Playground — Where ideas get tested"/></a>
 
-<img src="https://auf-zu-neuen-welten.de/assets/gimmicks.webp" align="right" width="400" alt="The playground"/>
+<a href="https://auf-zu-neuen-welten.de/#/gimmicks"><img src="https://auf-zu-neuen-welten.de/assets/gimmicks.webp" align="right" width="400" alt="The playground"/></a>
 
 Every idea I want to try lands in the gimmicks section of my site instead of dying in
 a scratch folder. It doubles as a testbed — if something new shows up in one of my
@@ -120,13 +120,13 @@ client projects, chances are it was tried out here first.
 <br clear="all"/>
 <br/>
 
-<img src="assets/playground.svg" width="100%" alt="Weather maps, interactive charts, AI image generator, realtime chat, recipe manager, movie database, country explorer, calendar, guestbook, site-wide search, Minesweeper, Connect Four, Yahtzee, jigsaw puzzle, quizzes"/>
+<a href="https://auf-zu-neuen-welten.de/#/gimmicks"><img src="assets/playground.svg" width="100%" alt="Weather maps, interactive charts, AI image generator, realtime chat, recipe manager, movie database, country explorer, calendar, guestbook, site-wide search, Minesweeper, Connect Four, Yahtzee, jigsaw puzzle, quizzes"/></a>
 
 <br/>
 
-<img src="assets/sec-05-clients.svg" width="100%" alt="05 · Clients — Shipped for other people"/>
+<a href="https://auf-zu-neuen-welten.de/#/#portfolio"><img src="assets/sec-05-clients.svg" width="100%" alt="05 · Clients — Shipped for other people"/></a>
 
-<img src="https://auf-zu-neuen-welten.de/assets/solakon.webp" align="right" width="400" alt="Solakon"/>
+<a href="https://www.solakon.de"><img src="https://auf-zu-neuen-welten.de/assets/solakon.webp" align="right" width="400" alt="Solakon"/></a>
 
 ### Solakon
 
@@ -139,7 +139,7 @@ Angular + Ionic.
 <br clear="all"/>
 <br/>
 
-<img src="https://auf-zu-neuen-welten.de/assets/webaro.webp" align="right" width="400" alt="Webaro"/>
+<a href="https://webaro.de"><img src="https://auf-zu-neuen-welten.de/assets/webaro.webp" align="right" width="400" alt="Webaro"/></a>
 
 ### Webaro
 
@@ -151,7 +151,7 @@ with live data streaming in. Angular.
 <br clear="all"/>
 <br/>
 
-<img src="https://auf-zu-neuen-welten.de/assets/catchCups.webp" align="right" width="400" alt="CatchCups"/>
+<a href="https://catchcups.com"><img src="https://auf-zu-neuen-welten.de/assets/catchCups.webp" align="right" width="400" alt="CatchCups"/></a>
 
 ### CatchCups
 
@@ -164,7 +164,7 @@ Angular + Ionic.
 <br clear="all"/>
 <br/>
 
-<img src="assets/sec-06-contact.svg" width="100%" alt="06 · Contact — Let's talk."/>
+<a href="https://auf-zu-neuen-welten.de/#/#contact"><img src="assets/sec-06-contact.svg" width="100%" alt="06 · Contact — Let's talk."/></a>
 
 Working on something and wondering whether I'm a fit? Tell me the stack, the timeline
 and roughly the budget — the more specific, the better. I usually answer within a day.
