@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <a href="https://auf-zu-neuen-welten.de"><img src="assets/btn-website.svg" alt="Visit the site"/></a>
+  <a href="https://benjamin-milcic.dev"><img src="assets/btn-website.svg" alt="Visit the site"/></a>
   &nbsp;
-  <a href="https://auf-zu-neuen-welten.de/#/#contact"><img src="assets/btn-contact.svg" alt="Get in touch"/></a>
+  <a href="https://benjamin-milcic.dev/#/#contact"><img src="assets/btn-contact.svg" alt="Get in touch"/></a>
 </p>
 
 <br/>
@@ -58,9 +58,9 @@ export class BenjaminMilcic {
 
 <picture><img src="assets/sec-03-work.svg" width="100%" alt="03 · Work — Selected projects"/></picture>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/homepage-image.png" align="right" width="400" alt="auf-zu-neuen-welten.de"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/homepage-image.png" align="right" width="400" alt="benjamin-milcic.dev"/></picture>
 
-### Auf zu neuen Welten
+### benjamin-milcic.dev
 
 My homepage, portfolio and permanent construction site — and the source of the
 graphics you are looking at right now.
@@ -71,14 +71,14 @@ deployed behind Cloudflare Workers. A NestJS API does the heavy lifting.
 
 Public on purpose: the code is part of the portfolio.
 
-<a href="https://auf-zu-neuen-welten.de"><img src="assets/btn-live.svg" alt="Live"/></a>
+<a href="https://benjamin-milcic.dev"><img src="assets/btn-live.svg" alt="Live"/></a>
 <a href="https://github.com/benjaminmilcic/aznw-routes"><img src="assets/btn-code.svg" alt="Source"/></a>
 <a href="https://github.com/benjaminmilcic/nest-aznw-api"><img src="assets/btn-backend.svg" alt="Backend"/></a>
 
 <br clear="all"/>
 <br/>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/learnCroatian.webp" align="right" width="400" alt="Vocabulary Trainer"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/learnCroatian.webp" align="right" width="400" alt="Vocabulary Trainer"/></picture>
 
 ### Vocabulary Trainer
 
@@ -92,7 +92,7 @@ Firebase behind it. Built because I wanted the thing to exist.
 <br clear="all"/>
 <br/>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/game-collection-en.webp" align="right" width="400" alt="Game Collection"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/game-collection-en.webp" align="right" width="400" alt="Game Collection"/></picture>
 
 ### Game Collection
 
@@ -107,13 +107,13 @@ Play against someone sitting in another browser.
 
 <picture><img src="assets/sec-04-playground.svg" width="100%" alt="04 · Playground — Where ideas get tested"/></picture>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/gimmicks.webp" align="right" width="400" alt="The playground"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/gimmicks.webp" align="right" width="400" alt="The playground"/></picture>
 
 Every idea I want to try lands in the gimmicks section of my site instead of dying in
 a scratch folder. It doubles as a testbed — if something new shows up in one of my
 client projects, chances are it was tried out here first.
 
-<a href="https://auf-zu-neuen-welten.de/#/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
+<a href="https://benjamin-milcic.dev/#/gimmicks"><img src="assets/btn-playground.svg" alt="Enter the playground"/></a>
 
 <br clear="all"/>
 <br/>
@@ -124,7 +124,7 @@ client projects, chances are it was tried out here first.
 
 <picture><img src="assets/sec-05-clients.svg" width="100%" alt="05 · Clients — Shipped for other people"/></picture>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/solakon.webp" align="right" width="400" alt="Solakon"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/solakon.webp" align="right" width="400" alt="Solakon"/></picture>
 
 ### Solakon
 
@@ -137,7 +137,7 @@ Angular + Ionic.
 <br clear="all"/>
 <br/>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/webaro.webp" align="right" width="400" alt="Webaro"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/webaro.webp" align="right" width="400" alt="Webaro"/></picture>
 
 ### Webaro
 
@@ -149,7 +149,7 @@ with live data streaming in. Angular.
 <br clear="all"/>
 <br/>
 
-<picture><img src="https://auf-zu-neuen-welten.de/assets/catchCups.webp" align="right" width="400" alt="CatchCups"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/catchCups.webp" align="right" width="400" alt="CatchCups"/></picture>
 
 ### CatchCups
 
@@ -169,6 +169,6 @@ and roughly the budget — the more specific, the better. I usually answer withi
 
 <p align="center">
   <a href="mailto:benjamin.milcic@gmail.com"><b>benjamin.milcic@gmail.com</b></a><br/>
-  <a href="https://auf-zu-neuen-welten.de"><b>auf-zu-neuen-welten.de</b></a><br/>
+  <a href="https://benjamin-milcic.dev"><b>benjamin-milcic.dev</b></a><br/>
 </p>
 
