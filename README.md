@@ -107,7 +107,7 @@ Play against someone sitting in another browser.
 
 <picture><img src="assets/sec-04-playground.svg" width="100%" alt="04 · Playground — Where ideas get tested"/></picture>
 
-<picture><img src="https://benjamin-milcic.dev/assets/gimmicks.webp" align="right" width="400" alt="The playground"/></picture>
+<picture><img src="https://benjamin-milcic.dev/assets/gimmicks-en.webp" align="right" width="400" alt="The playground"/></picture>
 
 Every idea I want to try lands in the gimmicks section of my site instead of dying in
 a scratch folder. It doubles as a testbed — if something new shows up in one of my
